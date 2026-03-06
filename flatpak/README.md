@@ -1,3 +1,7 @@
+# Discretion is advised
+
+Packaging was made possible by Claude, Qwen, and GLM. There is no discernment between slop and good practices.
+
 # Electron-Cash Flatpak
 
 Flatpak packaging for [Electron-Cash](https://www.electroncash.org/).
@@ -29,15 +33,6 @@ Or launch from your application menu.
 ```bash
 flatpak build-bundle repo Electron-Cash.flatpak org.electroncash.ElectronCash
 ```
-
-## Submit to Flathub
-
-1. Fork https://github.com/flathub/flathub
-2. Clone your fork: `git clone --branch=new-pr git@github.com:YOUR_USERNAME/flathub.git`
-3. Create branch: `git checkout -b add-electron-cash new-pr`
-4. Copy this directory to `apps/org.electroncash.ElectronCash/` in the flathub repo
-5. Commit and push: `git push -u origin add-electron-cash`
-6. Open a pull request against the `new-pr` branch (NOT master)
 
 ## Files
 

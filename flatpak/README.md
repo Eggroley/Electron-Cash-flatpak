@@ -78,6 +78,53 @@ flatpak-builder --user --force-clean --repo=repo build org.electroncash.Electron
 flatpak build-bundle repo Electron-Cash.flatpak org.electroncash.ElectronCash
 ```
 
+## Updating to a New Version
+
+### 1. Get the new version SHA256
+
+```bash
+curl -sL https://github.com/Electron-Cash/Electron-Cash/archive/refs/tags/4.4.4.tar.gz | sha256sum
+```
+
+### 2. Update `org.electroncash.ElectronCash.yml`
+
+Edit lines 163-164 with new version and SHA256:
+
+```yaml
+sources:
+  - type: archive
+    url: https://github.com/Electron-Cash/Electron-Cash/archive/refs/tags/4.4.4.tar.gz
+    sha256: <paste-new-sha256-here>
+```
+
+### 3. Update `org.electroncash.ElectronCash.metainfo.xml`
+
+Add new release at the top of `<releases>`:
+
+```xml
+<release version="4.4.4" date="2026-XX-XX">
+  <url type="details">https://github.com/Electron-Cash/Electron-Cash/releases/tag/4.4.4</url>
+  <description>
+    <p>Description of changes</p>
+  </description>
+</release>
+```
+
+### 4. Build and test
+
+```bash
+flatpak-builder --user --install-deps-from=flathub --force-clean build org.electroncash.ElectronCash.yml
+flatpak run org.electroncash.ElectronCash --version
+```
+
+### 5. Commit changes
+
+```bash
+git add org.electroncash.ElectronCash.yml org.electroncash.ElectronCash.metainfo.xml
+git commit -m "Update to Electron-Cash 4.4.4"
+git push origin master
+```
+
 ## Files
 
 ```
@@ -87,7 +134,7 @@ org.electroncash.ElectronCash.desktop      # Desktop entry
 python3-requirements.json                  # Python dependencies
 python3-requirements-binaries.json         # Binary wheels
 flathub.json                               # Architecture configuration
-shared-modules/                            # Git submodule (libusb for hardware wallets)
-tray-icon-fix.patch                        # System tray icon fix for KDE/GNOME
-build.sh                                   # Build script with auto-deps
+shared-modules/                            # Git submodule (libusb)
+tray-icon-fix.patch                        # Tray icon fix
+build.sh                                   # Build helper script
 ```

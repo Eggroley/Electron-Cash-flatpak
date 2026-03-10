@@ -48,5 +48,4 @@ echo ""
 flatpak-builder --user --install-deps-from=${REMOTE} --force-clean build ${MANIFEST} "$@"
 
 echo ""
-echo "Build complete! Install with:"
-echo "  flatpak-builder --user --install --force-clean build ${MANIFEST}"
+echo "Build complete!"

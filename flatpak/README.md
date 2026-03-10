@@ -1,7 +1,3 @@
-# Discretion is advised
-
-Packaging was made possible by Claude, Qwen, and GLM. There is no discernment between slop and good practices.
-
 # Electron-Cash Flatpak
 
 Flatpak packaging for [Electron-Cash](https://www.electroncash.org/).

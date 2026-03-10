@@ -40,7 +40,7 @@
 	<url type="contact">https://www.electroncash.org/contact</url>
 	<screenshots>
 		<screenshot type="default">
-			<image type="source">https://electroncash.org/images/wallet-shot-3.png</image>
+			<image type="source">https://raw.githubusercontent.com/Electron-Cash/Electron-Cash/master/icons/electron_presplash.png</image>
 			<caption>Main application window</caption>
 		</screenshot>
 	</screenshots>

@@ -22,7 +22,6 @@ finish-args:
 build-options:
   env:
     BASEAPP_REMOVE_WEBENGINE: "1"
-    LD_LIBRARY_PATH: /app/lib/python3.12/site-packages/electroncash/tor/bin:${LD_LIBRARY_PATH}
 
 cleanup:
   - /include

@@ -15,6 +15,11 @@ flatpak-builder --user --install-deps-from=flathub --force-clean build org.elect
 ```bash
 flatpak run org.electroncash.ElectronCash
 ```
+## Bundle
+```bash
+flatpak-builder --user --force-clean --repo=repo build org.electroncash.ElectronCash.yml
+flatpak build-bundle repo Electron-Cash.flatpak org.electroncash.ElectronCash
+```
 
 ## Features
 

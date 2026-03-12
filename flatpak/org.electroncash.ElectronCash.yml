@@ -119,7 +119,6 @@ modules:
       - install -Dm644 icons/electron-cash.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm755 ${FLATPAK_DEST}/bin/electron-cash ${FLATPAK_DEST}/bin/electron-cash.real
       - install -Dm755 electron-cash.sh ${FLATPAK_DEST}/bin/electron-cash
-      - install -Dm644 LICENCE ${FLATPAK_DEST}/share/licenses/${FLATPAK_ID}/LICENCE
       - desktop-file-edit --set-key="Icon" --set-value=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - |
         VERSION=$(grep 'PACKAGE_VERSION' electroncash/version.py | cut -d"'" -f2)
